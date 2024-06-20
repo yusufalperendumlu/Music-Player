@@ -12,7 +12,7 @@ import Trending from "@/screens/Trending";
 function App() {
   return (
     <>
-      <div className="bg-orange-600 h-screen w-screen rounded-3xl overflow-x-hidden flex">
+      <div className="bg-orange-600 h-screen w-screen rounded-3xl overflow-hidden flex">
         <Sidebar />
         <Routes>
           <Route path="/" element={<Home />} />
