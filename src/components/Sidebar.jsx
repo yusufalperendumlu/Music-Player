@@ -3,17 +3,29 @@ import { MdFavorite, MdSpaceDashboard } from "react-icons/md";
 import { FaGripfire, FaSignOutAlt } from "react-icons/fa";
 import { FaPlay } from "react-icons/fa";
 import { IoLibrary } from "react-icons/io5";
+import { useEffect, useState } from "react";
+import { apiClient } from "../../spotify";
 
 const Sidebar = () => {
+  const [image, setImage] = useState(
+    "https://static.vecteezy.com/system/resources/thumbnails/005/545/335/small/user-sign-icon-person-symbol-human-avatar-isolated-on-white-backogrund-vector.jpg"
+  );
+
+  useEffect(() => {
+    apiClient.get("me").then((response) => {
+      setImage(response.data.images[0].url);
+    });
+  }, []);
+
   return (
     <div className="w-[100px] h-full flex flex-col items-center justify-between mt-4">
       <img
-        src="https://static.vecteezy.com/system/resources/thumbnails/005/545/335/small/user-sign-icon-person-symbol-human-avatar-isolated-on-white-backogrund-vector.jpg"
+        src={image}
         alt="profile"
-        className="w-[60px] h-[50px] rounded-full mt-4"
+        className="w-[60px] h-[60px] rounded-full mt-4"
       />
 
-      <div>
+      <div className="flex flex-col gap-y-4">
         <SidebarButton
           title={"Feed"}
           to={"/feed"}

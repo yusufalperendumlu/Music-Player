@@ -11,8 +11,10 @@ const SidebarButton = (props) => {
     <Link to={props.to}>
       <div
         className={clsx(
-          "h-20 w-20 rounded-[20px] text-[#F8D9C0] flex items-center justify-center flex-col hover:bg-[#dedede40] transition-all duration-200 ease-linear",
-          isActive ? "bg-[#dedede40] scale-[1.02]" : "bg-transparent"
+          "h-20 w-20 rounded-[20px]  flex items-center justify-center flex-col hover:text-white transition-all duration-200 ease-linear",
+          isActive
+            ? "bg-[#dedede40] text-white scale-[1.02]"
+            : "bg-transparent text-[#F8D9C0]"
         )}
       >
         <IconContext.Provider
