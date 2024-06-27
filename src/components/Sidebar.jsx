@@ -15,10 +15,12 @@ const Sidebar = () => {
     apiClient.get("me").then((response) => {
       setImage(response.data.images[0].url);
     });
+
+    console.log(apiClient.get("me"));
   }, []);
 
   return (
-    <div className="w-[100px] h-full flex flex-col items-center justify-between mt-4">
+    <div className="w-[100px] h-full flex flex-col fixed items-center justify-between mt-4">
       <img
         src={image}
         alt="profile"
