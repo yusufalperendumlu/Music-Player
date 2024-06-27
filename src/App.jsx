@@ -34,16 +34,18 @@ function App() {
   return !token ? (
     <Login />
   ) : (
-    <div className="bg-orange-600 h-screen w-screen rounded-3xl overflow-hidden flex">
+    <div className="bg-orange-600 h-screen w-screen rounded-3xl overflow-x-hidden scroll-auto">
       <Sidebar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/feed" element={<Feed />} />
-        <Route path="/favorites" element={<Favorites />} />
-        <Route path="/library" element={<Library />} />
-        <Route path="/player" element={<Player />} />
-        <Route path="/trending" element={<Trending />} />
-      </Routes>
+      <div className="flex items-center justify-end overflow-x-hidden ">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/feed" element={<Feed />} />
+          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/library" element={<Library />} />
+          <Route path="/player" element={<Player />} />
+          <Route path="/trending" element={<Trending />} />
+        </Routes>
+      </div>
     </div>
   );
 }
