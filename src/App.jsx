@@ -11,10 +11,22 @@ import Trending from "@/screens/Trending";
 import Login from "@/screens/auth/Login";
 import { useEffect, useState } from "react";
 
-import setClientToken from "../spotify";
+import setClientToken, { apiClient } from "../spotify";
 
 function App() {
   const [token, setToken] = useState("");
+
+  const apiClientHandler = async () => {
+    try {
+      const response = await apiClient.get("/me");
+      if (response.status !== 200) {
+        localStorage.removeItem("token");
+        setToken("");
+      }
+    } catch (error) {
+      throw new Error(error);
+    }
+  };
 
   useEffect(() => {
     const token = window.localStorage.getItem("token");
@@ -29,6 +41,7 @@ function App() {
       setToken(token);
       setClientToken(token);
     }
+    apiClientHandler();
   }, []);
 
   return !token ? (
