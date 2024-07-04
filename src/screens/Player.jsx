@@ -1,14 +1,18 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { apiClient } from "../../spotify";
 
 const Player = () => {
   const location = useLocation();
+  const [track, setTrack] = useState([]);
+  const [currentTrack, setCurrentTruck] = useState({});
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     if (location.state) {
       apiClient.get(`/playlists/${location.state?.id}/tracks`).then((res) => {
-        console.log(res.data);
+        setTrack(res.data.items);
+        setCurrentTruck(res.data.items[0].track);
       });
     }
   }, [location.state]);

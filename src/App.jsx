@@ -24,7 +24,11 @@ function App() {
         setToken("");
       }
     } catch (error) {
-      throw new Error(error);
+      if (error.response && error.response.status === 401) {
+        localStorage.removeItem("token");
+        setToken("");
+      }
+      console.log("Unauthorized access - token removed");
     }
   };
 
