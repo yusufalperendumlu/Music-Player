@@ -1,6 +1,4 @@
 const AlbumInfo = ({ album }) => {
-  console.log(album);
-
   const artists = [];
 
   album?.artists?.forEach((e) => {

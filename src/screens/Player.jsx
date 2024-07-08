@@ -12,8 +12,6 @@ const Player = () => {
   const [currentTrack, setCurrentTrack] = useState({});
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  console.log(tracks);
-
   useEffect(() => {
     if (location.state) {
       apiClient.get(`/playlists/${location.state?.id}/tracks`).then((res) => {
@@ -26,8 +24,6 @@ const Player = () => {
   useEffect(() => {
     setCurrentTrack(tracks[currentIndex]?.track);
   }, [currentIndex, tracks]);
-
-  console.log(currentTrack);
 
   return (
     <div className="w-[calc(100%-100px)] h-screen flex  overflow-x-hidden bg-[#1e2a3e] rounded-3xl bg-custom-gradient">
