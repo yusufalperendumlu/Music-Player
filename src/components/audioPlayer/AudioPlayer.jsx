@@ -7,7 +7,7 @@ const AudioPlayer = ({ currentTrack }) => {
         <ProgressCircle
           color="#C96850"
           isPlaying={true}
-          image={currentTrack?.album.images[0]?.url}
+          image={currentTrack?.album?.images[0]?.url}
           size={300}
           percentage={60}
         />
