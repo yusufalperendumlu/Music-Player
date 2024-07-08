@@ -34,6 +34,11 @@ const Player = () => {
         <SongCard album={currentTrack} />
         <Queue tracks={tracks} setCurrentIndex={setCurrentIndex} />
       </div>
+
+      <div className="w-[calc(100%-100px)] h-screen overflow-x-hidden bg-[#1e2a3e] rounded-3xl bg-custom-gradient">
+        <div></div>
+        <div></div>
+      </div>
     </div>
   );
 };
