@@ -22,11 +22,16 @@ export default {
       },
       animation: {
         marquee: "marquee 12s linear infinite",
+        rounded: "rotation 30s infinite linear",
       },
       keyframes: {
         marquee: {
           "0%": { transform: "translate(0, 0)" },
           "100%": { transform: "translate(-100%, 0)" },
+        },
+        rotation: {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(359deg)" },
         },
       },
       transformOrigin: {

@@ -1,6 +1,7 @@
 const AlbumInfo = ({ album }) => {
   const artists = [];
 
+  console.log(album);
   album?.artists?.forEach((e) => {
     artists.push(e.name);
   });
@@ -19,7 +20,7 @@ const AlbumInfo = ({ album }) => {
       </div> */}
       <div className="text-sm font-semibold text-slate-400 overflow-hidden line-clamp-1 hover:line-clamp-none cursor-pointer">
         <p className="mt-1">{`${album?.album?.name} is an ${
-          album?.album_type
+          album?.album?.album_type
         } by ${artists?.join(", ")} with ${album?.total_tracks} track(s)`}</p>
       </div>
       <div className="text-xs font-normal text-slate-400">

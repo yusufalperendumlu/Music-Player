@@ -5,7 +5,7 @@ import { IconContext } from "react-icons";
 import { AiFillPlayCircle } from "react-icons/ai";
 
 const Queue = ({ tracks, setCurrentIndex }) => {
-  const [currentMusic, setCurrentMusic] = useState("");
+  const [currentMusic, setCurrentMusic] = useState(0);
   const tracksRefs = useRef([]);
 
   const handleQueueClick = (index) => {

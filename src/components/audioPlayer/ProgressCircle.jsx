@@ -1,3 +1,5 @@
+import clsx from "clsx";
+
 const Circle = ({ color, percentage, size, strokeWidth }) => {
   const radius = size / 2 - 10;
   const circumference = 2 * Math.PI * radius - 20;
@@ -38,7 +40,7 @@ const ProgressCircle = ({ percentage, isPlaying, size, color, image }) => {
           </clipPath>
         </defs>
         <image
-          className={isPlaying ? "active" : ""}
+          className={clsx("", isPlaying ? "animate-rounded origin-half" : "")}
           x={30}
           y={30}
           width={2 * (size / 2 - 30)}
@@ -47,7 +49,7 @@ const ProgressCircle = ({ percentage, isPlaying, size, color, image }) => {
           clipPath="url(#myCircle)"
         />
         <image
-          className={isPlaying ? "active" : ""}
+          className={clsx("", isPlaying ? "animate-rounded origin-half" : "")}
           x={100}
           y={100}
           width={2 * (size / 2 - 100)}
