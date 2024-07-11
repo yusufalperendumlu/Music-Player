@@ -28,7 +28,13 @@ const Player = () => {
   return (
     <div className="w-[calc(100%-100px)] h-screen flex  overflow-x-hidden bg-[#1e2a3e] rounded-3xl bg-custom-gradient ">
       <div className="w-[64%] h-full mr-8">
-        <AudioPlayer currentTrack={currentTrack} isPlaying={true} />
+        <AudioPlayer
+          currentTrack={currentTrack}
+          isPlaying={true}
+          currentIndex={currentIndex}
+          setCurrentIndex={setCurrentIndex}
+          total={tracks}
+        />
       </div>
       <div className="w-1/3 h-full flex flex-col justify-between fixed right-0 overflow-y-scroll">
         <SongCard album={currentTrack} />

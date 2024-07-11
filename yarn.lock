@@ -2859,6 +2859,11 @@ vite@^5.2.0:
   optionalDependencies:
     fsevents "~2.3.3"
 
+wavesurfer.js@^7.8.1:
+  version "7.8.1"
+  resolved "https://registry.npmjs.org/wavesurfer.js/-/wavesurfer.js-7.8.1.tgz"
+  integrity sha512-KMebCPZF7jjo1/B+G7JGJgQc7hshIhJLnM/gUi4pdyCwb89s4apivpVZY2kdvausqbm+ceeudvKGPBcR9uqXnQ==
+
 which-boxed-primitive@^1.0.2:
   version "1.0.2"
   resolved "https://registry.npmjs.org/which-boxed-primitive/-/which-boxed-primitive-1.0.2.tgz"
