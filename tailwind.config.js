@@ -21,6 +21,10 @@ export default {
           "linear-gradient(75deg, rgb(40, 58, 88) 0%, rgba(54, 69, 98, 0) 100%)",
         "custom-linear-g":
           "linear-gradient(180deg, rgba(54, 69, 98, 0), 10% rgba(54, 69, 98, 1) 100%)",
+        "custom-linear-zero":
+          "linear-gradient(0deg, rgba(30, 40, 62, 1), 0% rgba(54, 69, 98, 0.1) 100%)",
+        "custom-linear-one":
+          "linear-gradient(75deg, rgba(40, 58, 88), 0% rgba(54, 69, 98, 0) 100%)",
       },
       animation: {
         marquee: "marquee 30s linear infinite",
