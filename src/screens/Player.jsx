@@ -5,6 +5,7 @@ import { apiClient } from "../../spotify";
 import AudioPlayer from "@/components/audioPlayer/AudioPlayer";
 import SongCard from "@/components/SongCard";
 import Queue from "@/components/Queue";
+import Widgets from "@/components/widgets/Widgets";
 
 const Player = () => {
   const location = useLocation();
@@ -25,6 +26,8 @@ const Player = () => {
     setCurrentTrack(tracks[currentIndex]?.track);
   }, [currentIndex, tracks]);
 
+  console.log(currentTrack?.album?.artists[0]?.id);
+
   return (
     <div className="w-[calc(100%-100px)] h-screen flex  overflow-x-hidden bg-[#1e2a3e] rounded-3xl bg-custom-gradient ">
       <div className="w-[64%] h-full mr-8">
@@ -35,6 +38,7 @@ const Player = () => {
           setCurrentIndex={setCurrentIndex}
           total={tracks}
         />
+        <Widgets artistId={currentTrack?.album?.artists[0]?.id} />
       </div>
       <div className="w-1/3 h-full flex flex-col justify-between fixed right-0 overflow-y-scroll">
         <SongCard album={currentTrack} />
